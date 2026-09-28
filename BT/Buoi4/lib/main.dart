@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Profile App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFF8FAFC), // Nền màu xám nhạt theo Figma
-        fontFamily: 'Inter', // Hoặc font mặc định nếu chưa cài
+        scaffoldBackgroundColor: const Color(0xFFF8FAFC),
+        fontFamily: 'Inter',
       ),
       home: const ProfileScreen(),
     );
@@ -27,46 +27,39 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Nền ngoài cùng của trình duyệt web
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Container(
-            width: 390, // Fix cứng chiều rộng 390px theo Figma
-            margin: const EdgeInsets.symmetric(vertical: 20), // Cách viền trên dưới một chút cho đẹp trên web
+            width: 390,
+            margin: const EdgeInsets.symmetric(vertical: 20),
             decoration: BoxDecoration(
-              color: const Color(0xFFF8FAFC), // Nền bên trong app
-              borderRadius: BorderRadius.circular(44), // Bo góc 44px
+              color: const Color(0xFFF8FAFC),
+              borderRadius: BorderRadius.circular(44),
               border: Border.all(
-                color: const Color(0xFFCBD5E1), // Màu viền
-                width: 3, // Độ dày 3px
+                color: const Color(0xFFCBD5E1),
+                width: 3,
               ),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(41), // Cắt phần nội dung bị tràn ra ngoài góc bo
+              borderRadius: BorderRadius.circular(41),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 16),
-                    // 1. TopBar
                     _buildTopBar(),
                     const SizedBox(height: 24),
-                    // 2. Profile Header
                     _buildProfileHeader(),
                     const SizedBox(height: 24),
-                    // 3. Stats Card
                     _buildStatsCard(),
                     const SizedBox(height: 32),
-                    // 4. About Me
                     _buildAboutMe(),
                     const SizedBox(height: 24),
-                    // 5. Skills & Expertise
                     _buildSkills(),
                     const SizedBox(height: 24),
-                    // 6. Featured Projects
                     _buildFeaturedProjects(),
                     const SizedBox(height: 24),
-                    // 7. Contact Card
                     _buildContactCard(),
                     const SizedBox(height: 40),
                   ],
@@ -117,14 +110,12 @@ class ProfileScreen extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          // Avatar Stack
           SizedBox(
             width: 140,
             height: 140,
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Gradient Ring (140x140)
                 Container(
                   width: 140,
                   height: 140,
@@ -142,7 +133,6 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // White Border (132x132)
                 Container(
                   width: 132,
                   height: 132,
@@ -151,7 +141,6 @@ class ProfileScreen extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                 ),
-                // Avatar Image (124x124)
                 ClipOval(
                   child: Image.asset(
                     'images/Avatar.png',
@@ -160,7 +149,6 @@ class ProfileScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // Verified Badge (28x28)
                 Positioned(
                   bottom: 4,
                   right: 4,
@@ -179,7 +167,6 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          // Name
           const Text(
             'Alex Rivers',
             style: TextStyle(
@@ -189,7 +176,6 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4),
-          // Role
           const Text(
             'Lead Mobile Engineer',
             style: TextStyle(
@@ -199,7 +185,6 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          // Location Pill
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
@@ -269,8 +254,8 @@ class ProfileScreen extends StatelessWidget {
         Text(
           value,
           style: TextStyle(
-            fontSize: 20, // Kích thước 20px theo Figma
-            fontWeight: FontWeight.w700, // Đậm 700
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
             color: isRating ? const Color(0xFFEAB308) : const Color(0xFF0F172A),
           ),
         ),
@@ -361,7 +346,7 @@ class ProfileScreen extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 13,
-              fontWeight: FontWeight.w600, // Đậm 600 (SemiBold) theo Figma
+              fontWeight: FontWeight.w600,
               color: textColor,
             ),
           ),
