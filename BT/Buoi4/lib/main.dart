@@ -215,7 +215,7 @@ class ProfileScreen extends StatelessWidget {
   Widget _buildStatsCard() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.fromLTRB(20, 18, 20, 11),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
@@ -287,11 +287,12 @@ class ProfileScreen extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            'Passionate Lead Mobile Engineer specialized in Flutter, Dart, and building high-performance cross-platform applications. Focused on elegant user experiences.',
+            'Passionate Lead Mobile Engineer specialised in Flutter, Dart, and building high-performance cross-platform applications. Focused on elegant architecture, intuitive UX, and design systems.',
             style: TextStyle(
               fontSize: 14,
+              fontWeight: FontWeight.w400,
               height: 1.5,
-              color: Color(0xFF64748B),
+              color: Color(0xFF475569),
             ),
           ),
         ],
@@ -408,7 +409,7 @@ class ProfileScreen extends StatelessWidget {
             borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
             child: Image.asset(
               imagePath,
-              height: 100,
+              height: 85,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -474,7 +475,7 @@ class ProfileScreen extends StatelessWidget {
 
   Widget _buildContactRow(IconData? icon, String text, {bool isBold = false, String? leadingText}) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(18, 14, 11, 14),
       child: Row(
         children: [
           if (leadingText != null)
