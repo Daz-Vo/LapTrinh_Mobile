@@ -1,0 +1,9 @@
+@baseUrl = http://localhost:5080
+
+### Lấy danh sách sinh viên
+GET {{baseUrl}}/api/sinhvien
+Accept: application/json
+
+### Xem OpenAPI document
+GET {{baseUrl}}/openapi/v1.json
+Accept: application/json
